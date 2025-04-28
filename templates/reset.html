@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Password Reset</title>
+</head>
+<body>
+  <h2>Password Reset for {{ session.username }}</h2>
+  {% if message %}
+    <p>{{ message }}</p>
+  {% endif %}
+  <form method="POST" action="/reset">
+    <label>New Password:</label><br>
+    <input type="password" name="new_password" required><br>
+    <label>Confirm Password:</label><br>
+    <input type="password" name="confirm_password" required><br>
+    <button type="submit">Reset Password</button>
+  </form>
+  <p><a href="/logout">Logout</a></p>
+</body>
+</html>
